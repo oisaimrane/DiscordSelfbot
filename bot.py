@@ -3,8 +3,39 @@
 # Created By Viloid ( github.com/vsec7 )
 # Use At Your Own Risk
 
+To add a port to a Discord bot in Python, you typically deal with network configurations to serve content or allow communication on a specific port. This can be useful if you're integrating your bot with a web server (e.g., Flask or FastAPI) or exposing an API.
+
+Here’s a step-by-step guide:
+
+1. Install Necessary Libraries
+If you’re hosting a web server or handling HTTP requests:
+
+bash
+Copier le code
+pip install flask
+2. Set Up Your Bot
+Here's the basic structure of your bot:
+
+python
+Copier le code
+
 import requests, random, sys, yaml, time
 
+import threading
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_server():
+    app.run(host="0.0.0.0", port=8080)  # Replace 8080 with your desired port
+
+# Start Flask server in a separate thread
+thread = threading.Thread(target=run_server)
+thread.start()
 class Discord:
 
     def __init__(self, t):

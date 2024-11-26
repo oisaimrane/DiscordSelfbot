@@ -1,6 +1,5 @@
-BOT_TOKEN: 
-  - ODE3MzkzOTQ4xxxxxxxxxxxxxxxxxxxx
-  - ODk1NTEyMDExxxxxxxxxxxxxxxxxxxxx
+BOT_TOKEN=
+
 CHANNEL_ID: 
   - 793877159966015548
   - 
